@@ -10,7 +10,7 @@ conda install pytorch torchvision torchaudio pytorch-cuda=11.6 -c pytorch -c nvi
 conda install pybind11
 conda install -c conda-forge easydict
 
-cd ~/miniconda3/envs/deepflame/lib
+cd $CONDA_PREFIX/lib
 ln -s libmkl_rt.so.1 libmkl_rt.so.2
 cd -
 
