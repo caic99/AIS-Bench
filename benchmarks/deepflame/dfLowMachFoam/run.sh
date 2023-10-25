@@ -1,4 +1,4 @@
-conda activate deepflame
+source activate deepflame
 source /opt/openfoam7/etc/bashrc
 source ../deepflame-dev/bashrc
 

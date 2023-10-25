@@ -1,5 +1,5 @@
 conda create -n unimol pytorch torchvision torchaudio -c pytorch -c nvidia
-conda activate unimol
+source activate unimol
 
 # https://github.com/dptech-corp/Uni-Mol/tree/main/unimol#dependencies
 # https://github.com/dptech-corp/Uni-Core#installation

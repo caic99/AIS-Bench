@@ -1,4 +1,4 @@
-conda activate deepmd
+source activate deepmd
 cd ../deepmd-kit/examples/water/se_atten
 
 # https://docs.deepmodeling.com/projects/deepmd/en/master/getting-started/freeze.html

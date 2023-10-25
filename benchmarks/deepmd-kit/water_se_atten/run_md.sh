@@ -1,4 +1,4 @@
-conda activate deepmd
+source activate deepmd
 
 cd ../deepmd-kit/examples/water/lmp
 ln -s ../se_atten/graph.pb frozen_model.pb

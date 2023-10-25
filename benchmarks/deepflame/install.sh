@@ -12,7 +12,7 @@ conda create -n deepflame \
 	pytorch torchvision torchaudio libcantera-devel easydict pybind11 \
 	-c pytorch -c nvidia  -c cantera  -c conda-forge
 
-conda activate deepflame
+source activate deepflame
 
 # may not required
 cd $CONDA_PREFIX/lib

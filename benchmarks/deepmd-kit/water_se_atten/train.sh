@@ -1,4 +1,4 @@
-conda activate deepmd
+source activate deepmd
 cd ../deepmd-kit/examples/water/se_atten
 
 # TODO: Select a certain batch*step
