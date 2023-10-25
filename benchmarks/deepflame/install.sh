@@ -1,19 +1,25 @@
+# https://deepflame.deepmodeling.com/en/latest/qs/install.html
+
+# OpenFOAM-7
+# Requires Ubuntu 20
 sudo sh -c "wget -O - https://dl.openfoam.org/gpg.key | apt-key add -"
 sudo add-apt-repository http://dl.openfoam.org/ubuntu
 sudo apt-get update
 sudo apt-get -y install openfoam7
 
-conda create -n deepflame python=3.8
-conda activate deepflame
-conda install -c cantera libcantera-devel
-conda install pytorch torchvision torchaudio pytorch-cuda=11.6 -c pytorch -c nvidia
-conda install pybind11
-conda install -c conda-forge easydict
+# Cantera and PyTorch
+conda create -n deepflame \
+	pytorch torchvision torchaudio libcantera-devel easydict pybind11 \
+	-c pytorch -c nvidia  -c cantera  -c conda-forge
 
+conda activate deepflame
+
+# may not required
 cd $CONDA_PREFIX/lib
 ln -s libmkl_rt.so.1 libmkl_rt.so.2
 cd -
 
+# DeepFlame
 git clone https://github.com/deepmodeling/deepflame-dev.git
 cd deepflame-dev
 # Allwclean may be required on update
