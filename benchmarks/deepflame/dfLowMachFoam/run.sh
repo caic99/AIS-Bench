@@ -1,10 +1,10 @@
 source activate deepflame
-source /opt/openfoam7/etc/bashrc
+source /opt/OpenFOAM-7/etc/bashrc
 source ../deepflame-dev/bashrc
 
 # https://deepflame.deepmodeling.com/en/latest/qs/examples.html
 cd ../deepflame-dev/examples/dfLowMachFoam/threeD_reactingTGV/H2/pytorchIntegrator
-
+./Allclean
 # Execute
 ./Allrun
 # Currently some errors are thrown in the finalize stage;
