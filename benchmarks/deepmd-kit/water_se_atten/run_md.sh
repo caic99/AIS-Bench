@@ -1,8 +1,10 @@
 source activate deepmd
 
 cd ../deepmd-kit/examples/water/lmp
+# requires the trained model
+# run train.sh , test.sh first
 ln -s ../se_atten/graph.pb frozen_model.pb
-ngpu=${nvidia-smi --query-gpu=count --format=csv,noheader}
+ngpu=$(nvidia-smi --query-gpu=count --format=csv,noheader)
 
 mpirun -n $ngpu lmp -in in.lammps # lmp_mpi
 
