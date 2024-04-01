@@ -11,7 +11,8 @@ cd water_scan0_test
 source activate abacus
 np=`nproc`
 nt=1
-OMP_NUM_THREADS=$nt mpirun -n $np abacus # Ref: 486.57 s
+OMP_NUM_THREADS=$nt mpirun -n $np abacus
+# Ref: 2005s on 1t, 4p
 
 cat OUT.ABACUS/running_scf.log | grep -i final_etot
 ## !FINAL_ETOT_IS -29927.1311197787763376 eV
