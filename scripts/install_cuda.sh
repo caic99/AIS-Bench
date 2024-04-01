@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/bin/bash -ex
+which wget || apt update && apt install -y wget
+which sudo || apt update && apt install -y sudo
 
 # https://developer.nvidia.com/cuda-downloads
 # Install CUDA for ubuntu 22.04
