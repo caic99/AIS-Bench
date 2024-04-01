@@ -12,7 +12,7 @@ cd ../deepflame-dev/examples/dfLowMachFoam/threeD_reactingTGV/H2/pytorchIntegrat
 
 # Verify
 realpath log.mpirun
-cat log.mpirun | grep 'max(T)' | grep -o -E '[0-9\.]+'
+cat log.mpirun | grep 'max(T)' | grep -o -E '\-?[0-9\.]+' | tee result.txt
 # Last line:
 # min/max(T) = 300.932, 1495.56
 
