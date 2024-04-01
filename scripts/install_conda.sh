@@ -1,7 +1,9 @@
-#!/bin/bash
-wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+#!/bin/bash -ex
+which wget || apt update && apt install -y wget
+wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh -b
-~/miniconda3/bin/conda init
+export PATH=~/miniconda3/bin:$PATH
+conda init
 source ~/.bashrc
 
 # Recommended: set libmamba as the default solver
