@@ -6,4 +6,5 @@ cd ../deepmd-kit/examples/water/se_atten
 ngpu=$(nvidia-smi --query-gpu=count --format=csv,noheader)
 horovodrun -np $ngpu dp train --mpi-log=workers input.json
 # dp train input.json
-# DEEPMD rank:0  INFO    wall time: 81872.166 s
+# DEEPMD rank:0  INFO    wall time: 73350.656 s
+# average training time: 0.0719 s/batch (exclude first 100 batches)
