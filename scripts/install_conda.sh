@@ -8,5 +8,5 @@ source ~/.bashrc
 
 # Recommended: set libmamba as the default solver
 # https://www.anaconda.com/blog/conda-is-fast-now
-conda install -n base conda-libmamba-solver
+conda install -n base conda-libmamba-solver -y
 conda config --set solver libmamba
