@@ -1,0 +1,5 @@
+#Gromacs 自由能计算测速
+这里分：
+单个模拟测速
+Replica Exchange测速
+collect_remd_res.py为解析REMD结果文件脚本
