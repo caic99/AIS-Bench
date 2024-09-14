@@ -1,0 +1,51 @@
+benchmark: deepmd-kit
+algorithm: se_atten
+test case: water example
+task: training
+description: training a dp model with water molecules data
+
+link: https://github.com/deepmodeling/deepmd-kit/blob/v3.0.0b3/examples/water/dpa2
+command: dp train input_torch.json
+
+environment:
+- deepmd-kit: 3.0.0
+# - cuda: 11.2
+# - torch: 2.0
+
+test date: 2024-09-13
+test job link: https://bohrium.dp.tech/jobs/list?id=4240744
+results:
+  - instance: NVIDIA P100
+    # price: 4.0
+    time: 3572
+    # cost: 3.97
+  - instance: NVIDIA T4
+    # price: 2.5
+    time: 15771
+    # cost: 10.94
+  - instance: NVIDIA V100
+    # price: 4.5
+    time: 2882
+    # cost: 3.60
+  - instance: NVIDIA 3090
+    # price: 4.5
+    time: 6569
+    # cost: 2.96
+  - instance: NVIDIA 4090
+    # price: 5.5
+    time: 3067
+    # cost: 1.69
+  - instance: NVIDIA L4
+    # price: 5.0
+    time: 8947
+    # cost: 4.69
+  - instance: NVIDIA L20
+    # price: 8.0
+    time: 4464
+    # cost: 9.92
+
+time unit: seconds per 10000 training steps
+price unit: ¥ per hour on Bohrium platform
+cost unit: ¥ per 10000 training steps
+cost calculation:  time * (price / 3600)
+remarks: null

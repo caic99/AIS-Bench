@@ -1,0 +1,35 @@
+benchmark: deepmd-kit
+algorithm: se_atten
+test case: water example
+task: training
+description: training a dp model with water molecules data
+
+link: https://github.com/deepmodeling/deepmd-kit/blob/v3.0.0b3/examples/water/se_atten
+command: dp train input.json
+
+environment:
+  - deepmd-kit: 3.0.0
+
+test date: 2024-09-13
+test job link: https://bohrium.dp.tech/jobs/list?id=4241375
+results:
+  - instance: NVIDIA P100
+    time: 1161
+  - instance: NVIDIA T4
+    time: 5378
+  - instance: NVIDIA V100
+    time: 803
+  - instance: NVIDIA 3090
+    time: 2093
+  - instance: NVIDIA 4090
+    time: 1032
+  - instance: NVIDIA L4
+    time: 3297
+  - instance: NVIDIA L20
+    time: 1482
+
+time unit: seconds per 10000 training steps
+price unit: ¥ per hour on Bohrium platform
+cost unit: ¥ per 10000 training steps
+cost calculation: time * (price / 3600)
+remarks: null

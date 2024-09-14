@@ -1,0 +1,35 @@
+benchmark: abacus
+test case: 27 Fe molecules
+task: SCF
+algorithm: cg
+description: SCF calculation of 27 Fe molecules, using plane wave basis set
+link: https://github.com/deepmodeling-activity/abacus-test.github.io/tree/master/datasets/dataset1-pw/006_27Fe
+command: abacus
+
+environment:
+  - abacus: 3.7.3
+
+test date: 2024-09-13
+test job link: https://bohrium.dp.tech/jobs/list?id=4241219
+
+results:
+  - instance: NVIDIA P100
+    time: 1786
+  - instance: NVIDIA T4
+    time: 4473
+  - instance: NVIDIA V100
+    time: 1171
+  - instance: NVIDIA 3090
+    time: 1570
+  - instance: NVIDIA 4090
+    time: 1071
+  - instance: NVIDIA L4
+    time: 2964
+  - instance: NVIDIA L20
+    time: 1300
+
+time unit: seconds to converge
+price unit: ¥ per hour on Bohrium platform
+cost unit: ¥ spent to converge
+cost calculation: time * (price / 3600)
+remarks: null
