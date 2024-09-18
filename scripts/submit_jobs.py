@@ -1,11 +1,3 @@
-# import lbgcore.client, lbgcore.jobgroup, lbgcore.job
-
-# client = lbgcore.client.Client(
-#     email="caic@bjaisi.com", token="54c18ad4bdfb4577bfa047334d29c466"
-# )
-# jobgroup = lbgcore.jobgroup.JobGroup(client)
-# jobgroup_id = jobgroup.create(project_id=24019, name="test")["projectId"]
-
 import os
 import json
 from copy import deepcopy
@@ -39,7 +31,7 @@ job_config_template = {
     # "out_files": ["se_e2_a/lcurve.out", "se_e2_a/graph.pb"], # by default get STDOUTERR
     # "platform": "ali",
     # "disk_size": 200,
-    # "input_file_path": "./",
+    "input_file_path": "./",
     "image_address": "registry.dp.tech/dptech/prod-375/bench:v2",
     "image_name": "registry.dp.tech/dptech/prod-375/bench:v2",
     # "job_group_id": jobgroup_id,
@@ -83,23 +75,24 @@ test_job_config={
 }
 
 # Select a config !!!
-job_config = abacus_job_config
+job_config = test_job_config
 job_config.update(job_config_template)
 machine_types = gpu_machine_types
-# machine_types = gpu_machine_types[2:4]
+machine_types = gpu_machine_types[2:4]
 
 # create an access key at https://bohrium.dp.tech/settings/user
-os.environ["ACCESS_KEY"] = "my_access_key"
+os.environ["ACCESS_KEY"] = "REDACTED"
 
 output = os.popen(
-    f"lbg jobgroup create -p 24019 -n {job_config['name']}"
-).read()  # {'groupId': 4192911}
+    f"bohr job_group create -p 24019 -n {job_config['name']}"
+).read()  # job_group_id: 4251709 has been successfully created.
+assert "successfully" in output
 # extract jobgroup_id
-jobgroup_id = json.loads(output.replace("'", '"'))["groupId"]
+jobgroup_id = int(output.split(":")[1].split()[0])
 print(f"{jobgroup_id=}")
 print(f"https://bohrium.dp.tech/jobs/list?id={jobgroup_id}")
 print()
-job_config["job_group_id"] = jobgroup_id
+job_config["job_group_id"] = jobgroup_id # type: ignore
 
 job_ids=[]
 for machine_type in machine_types:
