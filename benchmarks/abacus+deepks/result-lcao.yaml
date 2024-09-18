@@ -1,0 +1,38 @@
+
+
+benchmark: abacus
+test case: battery materials
+task: SCF
+algorithm: genelpa
+description: SCF calculation of battery material system Li128C75H100O75, using LCAO basis set
+link: https://github.com/deepmodeling-activity/abacus-test.github.io/tree/master/datasets/dataset2-lcao/004_Li128C75H100O75
+command: abacus
+
+environment:
+  - abacus: 3.7.3
+
+test date: 2024-09-13
+test job link: https://bohrium.dp.tech/jobs/list?id=4244005
+
+
+results:
+  - instance: NVIDIA P100
+    time: 9055
+  - instance: NVIDIA T4
+    time: 7038
+  - instance: NVIDIA V100
+    time: 3445
+  - instance: NVIDIA 3090
+    time: 3803
+  - instance: NVIDIA 4090
+    time: 3631
+  - instance: NVIDIA L4
+    time: 2022
+  - instance: NVIDIA L20
+    time: 1431
+
+time unit: seconds to converge
+price unit: ¥ per hour on Bohrium platform
+cost unit: ¥ spent to converge
+cost calculation: time * (price / 3600)
+remarks: null
