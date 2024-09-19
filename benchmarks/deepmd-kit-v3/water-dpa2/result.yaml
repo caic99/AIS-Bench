@@ -1,5 +1,5 @@
 benchmark: deepmd-kit
-algorithm: se_atten
+algorithm: dpa2
 test case: water example
 task: training
 description: training a dp model with water molecules data
