@@ -3,7 +3,7 @@
 benchmark: abacus
 test case: battery materials
 task: SCF
-algorithm: genelpa
+algorithm: cusolver
 description: SCF calculation of battery material system Li128C75H100O75, using LCAO basis set
 link: https://github.com/deepmodeling-activity/abacus-test.github.io/tree/master/datasets/dataset2-lcao/004_Li128C75H100O75
 command: abacus
