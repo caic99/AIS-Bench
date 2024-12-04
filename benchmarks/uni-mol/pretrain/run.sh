@@ -1,6 +1,11 @@
+# Download training data (115G)
 # https://github.com/dptech-corp/Uni-Mol/tree/main/unimol#uni-mols-3d-conformation-data
 wget -c https://bioos-hermite-beijing.tos-cn-beijing.volces.com/unimol_data/pretrain/ligands.tar.gz
 test -d ligands || tar xf ligands.tar.gz
+# For performance evaluation, the validation set (~0.8G) can be downloaded from
+# https://www.aissquare.com/datasets/detail?pageType=datasets&name=Uni-Mol-Pretrain-Valid&id=290
+# wget -c https://store.aissquare.com/datasets/8021519d-e706-40c7-a770-03eda2891c5b/valid.lmdb
+
 # https://github.com/dptech-corp/Uni-Mol/tree/main/unimol#molecular-pretraining
 source activate unimol
 
